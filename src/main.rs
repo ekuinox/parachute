@@ -1,6 +1,8 @@
 mod config;
+mod parachute;
 
 use config::*;
+use parachute::Parachute;
 use anyhow::Result;
 use dotenv::dotenv;
 use std::env;
@@ -13,7 +15,11 @@ async fn main() -> Result<()> {
     let path = env::var(CONFIG_ENV_KEY)?;
     let conf = Config::try_from_path(&path)?;
 
-    println!("token: {}", conf.discord.token);
+    dbg!(&conf);
+
+    let mut parachute = Parachute::build(&conf.discord).await?;
+
+    let _ = parachute.start().await?;
 
     Ok(())
 }

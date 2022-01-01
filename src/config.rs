@@ -1,10 +1,6 @@
 use anyhow::Result;
 use serde::Deserialize;
-
-#[derive(Deserialize, Debug)]
-pub(crate) struct DiscordConfig {
-    pub token: String,
-}
+use crate::parachute::DiscordConfig;
 
 #[derive(Deserialize, Debug)]
 pub(crate) struct Config {
