@@ -1,9 +1,0 @@
-{
-	"owner": "",
-	"command_prefix": "",
-	"plugins": {
-		"<PLUGIN_NAME>": {
-			"disable": false
-		}
-	}
-}
