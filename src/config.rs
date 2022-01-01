@@ -1,10 +1,11 @@
 use anyhow::Result;
 use serde::Deserialize;
-use crate::parachute::DiscordConfig;
+use crate::{parachute::DiscordConfig, kuaga::room::Room};
 
 #[derive(Deserialize, Debug)]
 pub(crate) struct Config {
     pub discord: DiscordConfig,
+    pub kuaga: Room,
 }
 
 impl Config {

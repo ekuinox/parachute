@@ -1,3 +1,7 @@
+#[macro_use]
+extern crate anyhow;
+
+mod kuaga;
 mod config;
 mod parachute;
 
@@ -16,6 +20,9 @@ async fn main() -> Result<()> {
     let conf = Config::try_from_path(&path)?;
 
     dbg!(&conf);
+
+    let status = conf.kuaga.status().await?;
+    println!("{:?}", status);
 
     let mut parachute = Parachute::build(&conf.discord).await?;
 

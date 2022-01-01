@@ -12,3 +12,6 @@ toml = "0.5.8"
 tokio = { version = "1.15.0", features = ["full"] }
 anyhow = "1.0.52"
 dotenv = "0.15.0"
+chrono = "*"
+reqwest = "0.11.8"
+csv = "1.1.6"
